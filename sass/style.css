@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+:root {
+  --Dark-Gray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Gray: hsl(0, 0%, 27%);
+  --Font: "Spartan", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: var(--Font);
+  font-size: 12px;
+}
+
+body header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 2rem 2rem;
+}
+
+body header .logo {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+body header .menu {
+  cursor: pointer;
+}
+
+body nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: var(--White);
+  padding: 0 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+body nav .close {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+body nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  width: 100%;
+}
+
+body nav ul li {
+  margin-right: 1rem;
+}
+
+body nav ul li a {
+  text-decoration: none;
+  color: var(--Black);
+  font-weight: 600;
+  position: relative;
+}
+
+body nav ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: -0.2rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  border-radius: 5rem;
+  background-color: var(--Black);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+body nav ul li a:hover::after {
+  width: 100%;
+}
+
+body .active {
+  display: none;
+}
+
+body .image .mobile-hero {
+  width: 100vw;
+}
+
+body .image .desktop-hero {
+  display: none;
+}
+
+body .fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body .description {
+  position: relative;
+  padding: 3.5rem 2rem;
+}
+
+body h1 {
+  font-size: 1.5rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
+}
+
+body p {
+  color: var(--Dark-Gray);
+  padding-bottom: 3rem;
+  line-height: 1.5rem;
+}
+
+body button {
+  outline: none;
+  border: none;
+  font-family: var(--Font);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  background-color: transparent;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+body button:hover {
+  color: var(--Dark-Gray);
+}
+
+body button:hover svg {
+  fill: var(--Dark-Gray);
+}
+
+body .slide {
+  display: none;
+}
+
+body .topsection .btns {
+  position: absolute;
+  top: 40.7%;
+  right: 0;
+  background-color: var(--Black);
+  z-index: 2;
+}
+
+body .topsection .btns button {
+  background-color: var(--Black);
+  padding: 1rem;
+  border: none;
+  outline: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+body .topsection .btns button:hover {
+  background-color: var(--Dark-Gray);
+}
+
+body .bottomsection img {
+  width: 100%;
+}
+
+body .bottomsection .about {
+  padding: 3.5rem 2rem;
+}
+
+body .bottomsection .about h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding-bottom: 1rem;
+}
+
+body .bottomsection .about p {
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  body header .logo {
+    left: 10%;
+  }
+  body header .menu {
+    display: none;
+  }
+  body .active {
+    display: block;
+    background-color: transparent;
+    width: 60%;
+  }
+  body .active ul {
+    margin: 2rem auto;
+  }
+  body .active ul li a {
+    font-size: 13px;
+    color: var(--White);
+  }
+  body .active ul li a::after {
+    background-color: var(--White);
+  }
+  body .active .close {
+    display: none;
+  }
+  body .slide .image .mobile-hero {
+    display: none;
+  }
+  body .slide .image .desktop-hero {
+    display: block;
+  }
+  body .description {
+    padding: 5rem;
+  }
+  body .topsection {
+    position: relative;
+  }
+  body .topsection .btns {
+    top: 88.8%;
+    right: 30.65%;
+  }
+  body .bottomsection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body .bottomsection .about {
+    width: 42%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
